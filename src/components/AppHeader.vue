@@ -28,6 +28,8 @@
 header {
   background-color: rgb(235, 235, 235);
   width: 100%;
+  position: fixed;
+  z-index: 1;
 }
 
 .container {

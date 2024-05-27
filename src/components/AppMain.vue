@@ -20,7 +20,12 @@ export default {
   </main>
 </template>
 <style scoped>
+main {
+  padding-top: 6rem;
+}
+
 .background {
+  /* padding-top: 6rem; */
   width: 100%;
   height: 25rem;
   background-image: url(../assets/jumbotron.jpg);
