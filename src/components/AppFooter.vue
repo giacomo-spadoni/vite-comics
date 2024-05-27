@@ -1,13 +1,46 @@
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      listBuy: [
+        {
+          img: 'buy-comics-digital-comics.png',
+          description: 'DIGITAL COMICS',
+        },
+        {
+          img: 'buy-comics-merchandise.png',
+          description: 'DC MERCHANDISE',
+        },
+        {
+          img: 'buy-comics-subscriptions.png',
+          description: 'SUBSCRIPTION',
+        },
+        {
+          img: 'buy-comics-shop-locator.png',
+          description: 'COMIC SHOP LOCATOR',
+        },
+        {
+          img: 'buy-dc-power-visa.svg',
+          description: 'DC POWER VISA',
+        },
+      ],
+    };
+  },
+  methods: {
+    getImage(nomefile) {
+      return new URL(`../assets/${nomefile}`, import.meta.url);
+    },
+  },
+};
+</script>
 <template>
   <footer>
     <section class="list">
       <div class="container-list">
-        <div>DIGITAL COMICS</div>
-        <div>DC MERCHANDISE</div>
-        <div>SUBSCRIPTION</div>
-        <div>COMIC SHOP LOCATOR</div>
-        <div>DC POWER VISA</div>
+        <div v-for="(buy, i) in listBuy" class="buy-comics">
+          <img :src="getImage(buy.img)" alt="" />
+          <div>{{ buy.description }}</div>
+        </div>
       </div>
     </section>
     <section class="list-background">
@@ -87,6 +120,17 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.buy-comics {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.buy-comics img {
+  height: 4rem;
+  max-width: 4rem;
 }
 
 .list-background {
