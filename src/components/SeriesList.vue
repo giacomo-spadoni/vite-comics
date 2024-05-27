@@ -118,7 +118,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: start;
-  margin: 3rem auto;
+  margin: 3rem auto 0;
 }
 
 .series {
